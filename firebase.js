@@ -4,13 +4,13 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyDWdC3s9gr03mSdzmbMBndiuieHV0uNDeo",
+  authDomain: "inventory-management-e9a1e.firebaseapp.com",
+  projectId: "inventory-management-e9a1e",
+  storageBucket: "inventory-management-e9a1e.appspot.com",
+  messagingSenderId: "647986285740",
+  appId: "1:647986285740:web:f6e84257dc1e83dd02e309",
+  measurementId: "G-JYEDKMP28T"
 };
 
 // Initialize Firebase
