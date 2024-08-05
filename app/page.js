@@ -29,18 +29,20 @@ const style = {
 }
 
 export default function Home() {
-  // We'll add our component logic here
-
+  
   const [inventory, setInventory] = useState([])
   const [open, setOpen] = useState(false)
   const [itemName, setItemName] = useState('')
 
+  // after adding/removing an element
   const updateInventory = async () => {
     const snapshot = query(collection(firestore, 'inventory'))
     const docs = await getDocs(snapshot)
     const inventoryList = []
     docs.forEach((doc) => {
+      if (doc.id !== "boxes") { // remove boxes from UI
       inventoryList.push({ name: doc.id, ...doc.data() })
+      }
     })
     setInventory(inventoryList)
   }
@@ -50,6 +52,7 @@ export default function Home() {
   }, [])
 
   const addItem = async (item) => {
+    if (item.trim() === "") return; // if item name is empty
     const docRef = doc(collection(firestore, 'inventory'), item)
     const docSnap = await getDoc(docRef)
     if (docSnap.exists()) {
