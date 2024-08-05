@@ -53,7 +53,8 @@ export default function Home() {
 
   const addItem = async (item) => {
     if (item.trim() === "") return; // if item name is empty
-    const docRef = doc(collection(firestore, 'inventory'), item)
+    let newItem = item.toLowerCase();
+    const docRef = doc(collection(firestore, 'inventory'), newItem)
     const docSnap = await getDoc(docRef)
     if (docSnap.exists()) {
       const { quantity } = docSnap.data()
